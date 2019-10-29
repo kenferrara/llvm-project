@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>Running the analyzer from the command line</title>
+  <link type="text/css" rel="stylesheet" href="content.css">
+  <link type="text/css" rel="stylesheet" href="menu.css">
+  <script type="text/javascript" src="scripts/menu.js"></script>
+</head>
+<body>
+
+<div id="page">
+<!--#include virtual="menu.html.incl"-->
+<div id="content">
+
+<h1>Running the analyzer from the command line</h1>
+
+<p>The following tools are used commonly to run the analyzer from the command line.
+Both tools are wrapper scripts to drive the analysis and the underlying invocations of the Clang compiler:
+<ol>
+  <li><a href="scan-build.html">scan-build</a></li>
+  <ul>
+    <li>Preferred on macOS.</li>
+    <li>In tree, part of the LLVM project.</li>
+    <li>Provides limited and unsupported <a href="https://clang.llvm.org/docs/analyzer/user-docs/CrossTranslationUnit.html">Cross Translation Unit (CTU) analysis</a> capabilities.
+    </li>
+  </ul>
+  <li><a href="codechecker.html">CodeChecker</a></li>
+  <ul>
+    <li>Preferred on Linux.</li>
+    <li>Out-of-tree, not part of the LLVM project, hosted on github.</li>
+    <li>On Linux there are many projects for embedded devices which are built only with GCC.
+    CodeChecker converts these GCC invocations to the appropriate Clang invocations, this way the CSA can work on these projects seamlessly.
+    </li>
+    <li><a href="https://clang.llvm.org/docs/analyzer/user-docs/CrossTranslationUnit.html">Cross Translation Unit (CTU) analysis</a> is supported fully on Linux via CodeChecker.
+    </li>
+    <li>Supports incremental analysis: Results can be stored in a database, subsequent analysis runs can be compared to list the newly added defects.
+  </ul>
+</ol>
+</p>
+
+<p>
+</p>
+<p>
+</p>
+
+</div>
+</div>
+</body>
+</html>

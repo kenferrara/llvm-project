@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <title>CodeChecker: running the analyzer from the command line</title>
+  <link type="text/css" rel="stylesheet" href="content.css">
+  <link type="text/css" rel="stylesheet" href="menu.css">
+  <script type="text/javascript" src="scripts/menu.js"></script>
+</head>
+<body>
+
+<div id="page">
+<!--#include virtual="menu.html.incl"-->
+<div id="content">
+
+<h1>CodeChecker: running the analyzer from the command line</h1>
+
+<h2>Basic Usage</h2>
+
+<p>
+Analyze your project with the <tt>check</tt> command:
+<pre class="code_example">
+CodeChecker check -b "cd ~/your-project && make clean && make" -o ~/results
+</pre>
+</p>
+
+<p>
+The <tt>check</tt> command will print an overview of the issues found in your project by the analyzers.
+</p>
+
+<p>
+Start a CodeChecker web and storage server in another terminal or as a background process. By default it will listen on <tt>localhost:8001.</tt>
+The SQLite database containing the reports will be placed in your workspace directory (<tt>~/.codechecker</tt> by default), which can be provided via the <tt>-w</tt> flag.
+<pre class="code_example">
+CodeChecker server
+</pre>
+</p>
+
+<p>
+Store your analysis reports onto the server to be able to use the Web Viewer.
+<pre class="code_example">
+CodeChecker store ~/results -n my-project
+</pre>
+</p>
+
+<p>
+To view the results, open the CodeChecker web viewer in your browser at <tt>localhost:8001</tt>, and you should be greeted with a web application showing you the analysis results.
+<pre class="code_example">
+firefox localhost:8001
+</pre>
+</p>
+
+<h2>Detailed Usage</h2>
+
+<p>
+For extended documentation please refer to the <a href="https://github.com/Ericsson/codechecker">official site of CodeChecker</a>!
+</p>
+
